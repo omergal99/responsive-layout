@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./assets/css/App.scss";
+import Main from "./pages/Main";
+import styled from "styled-components";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header className="flex-center">
+        <h2>Header</h2>
+      </Header>
+      <Nav className="flex-center">
+        <h4>nav</h4>
+      </Nav>
+
+      <Main />
+
+      <Footer className="flex-center">
+        <h4>Footer</h4>
+      </Footer>
     </div>
   );
 }
+const reuseFixed = `
+  color: #d5e2ff;
+  position: fixed;
+  width: 100%;
+`;
 
-export default App;
+const Header = styled.header`
+  ${reuseFixed}
+  background-color: #5d5d5d;
+  top: 0;
+  height: var(--header-height);
+`;
+
+const Nav = styled.nav`
+  ${reuseFixed}
+  background-color: #384a50;
+  top: 3rem;
+  height: var(--nav-height);
+`;
+
+const Footer = styled.footer`
+  ${reuseFixed}
+  background-color: #5d5d5d;
+  bottom: 0;
+  height: var(--footer-height);
+`;
