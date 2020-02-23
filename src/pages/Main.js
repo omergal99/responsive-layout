@@ -4,8 +4,8 @@ import styled from "styled-components";
 
 export default function Main() {
   return (
-    <MainContainer>
-      <TopBody>
+    <MainContainer className="MainContainer">
+      <TopBody className="TopBody">
         <AsideLeft>Aside-left</AsideLeft>
 
         <MainBody>Main</MainBody>
@@ -24,6 +24,33 @@ const MainContainer = styled.div`
   );
 `;
 
-const TopBody = styled.footer``;
+const TopBody = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80%;
+  & > * {
+    height: 100%;
+    resize: horizontal;
+    overflow: auto;
+  }
+`;
 
-const BottomBody = styled.footer``;
+const AsideLeft = styled.div`
+  width: 20%;
+  background-color: #a29;
+`;
+const MainBody = styled.div`
+  width: 60%;
+  background-color: #67b;
+  flex-grow: 1;
+`;
+const AsideRight = styled.div`
+  width: 20%;
+  background-color: #41c;
+`;
+
+const BottomBody = styled.footer`
+  height: 20%;
+  background-color: #5c5;
+`;
